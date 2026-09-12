@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Fotos{% endblock %}
+
+{% block content %}
+<div class="page-content">
+    <h1 class="page-title">Fotos</h1>
+
+    <div class="fotos-grid">
+        <div class="foto-item">
+            <img src="{{ url_for('static', filename='foto-01.jpeg') }}" alt="Foto 1" class="foto-img">
+            <h3 class="foto-label">Foto 1</h3>
+        </div>
+
+        <div class="foto-item">
+            <img src="{{ url_for('static', filename='foto-02.jpeg') }}" alt="Foto 2" class="foto-img">
+            <h3 class="foto-label">Foto 2</h3>
+        </div>
+
+        <div class="foto-item">
+            <img src="{{ url_for('static', filename='foto-03.jpeg') }}" alt="Foto 3" class="foto-img">
+            <h3 class="foto-label">Foto 3</h3>
+        </div>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="back-link">
+        <i class="fas fa-arrow-left"></i> Voltar ao início
+    </a>
+</div>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}O que é{% endblock %}
+
+{% block content %}
+<div class="page-content">
+
+    <!-- Logo no topo, centralizado -->
+    <div class="info-logo-wrapper">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Lord of Beans" class="info-logo">
+    </div>
+
+    <!-- Título principal abaixo do logo -->
+    <h1 class="page-title">O que é o Feijão Expresso?</h1>
+
+    <!-- Seção A Origem -->
+    <div class="info-section">
+        <h2 class="info-subtitle">A Origem</h2>
+        <p class="info-text">
+            Tudo começou em <strong>Londres, Reino Unido</strong>, entre agosto e setembro de <strong>2017</strong>.
+            Observando a rotina acelerada dos londrinos — a vida agitada, as refeições rápidas e inadequadas,
+            o consumo exagerado de café e a busca constante por alimentos instantâneos —, surgiu uma ideia:
+            criar uma bebida que unisse <strong>praticidade</strong> e <strong>nutrição real</strong>.
+        </p>
+        <p class="info-text">
+            Assim nasceu o <strong>Lord of Beans</strong>, um projeto idealizado por
+            <strong>Evilásio Erthal</strong> e <strong>Carlos Alberto Ferreira</strong>.
+            A proposta: oferecer um <strong>caldo de feijão expresso</strong>, saudável, integral e pronto
+            em poucos segundos.
+        </p>
+    </div>
+
+    <!-- Seção O Problema -->
+    <div class="info-section">
+        <h2 class="info-subtitle">O Problema</h2>
+        <div class="cards-grid">
+            <div class="info-card">
+                <i class="fas fa-running"></i>
+                <h3>Vida agitada</h3>
+                <p>Rotina acelerada deixa pouco tempo para refeições saudáveis</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Refeições rápidas</h3>
+                <p>Comida rápida e inadequada se tornou o padrão do dia a dia</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-mug-hot"></i>
+                <h3>Excesso de café</h3>
+                <p>Consumo exagerado de café como única fonte de energia</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Fast food</h3>
+                <p>Busca crescente por alimentos instantâneos e de baixo valor nutricional</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção A Solução -->
+    <div class="info-section">
+        <h2 class="info-subtitle">A Solução: Caldo de Feijão Expresso</h2>
+        <p class="info-text">
+            Uma bebida <strong>instantânea</strong>, feita com <strong>grãos inteiros de feijão</strong>,
+            que combina a tradição da culinária brasileira com a praticidade que o mundo moderno exige.
+            Mais que uma bebida — é <strong>energia nutritiva</strong> em cada gole.
+        </p>
+    </div>
+
+    <!-- Seção Vantagens -->
+    <div class="info-section">
+        <h2 class="info-subtitle">Vantagens</h2>
+        <div class="cards-grid">
+            <div class="info-card advantage-card">
+                <i class="fas fa-clock"></i>
+                <h3>Instantâneo</h3>
+                <p>Preparado em poucos segundos</p>
+            </div>
+            <div class="info-card advantage-card">
+                <i class="fas fa-weight"></i>
+                <h3>Baixas Calorias</h3>
+                <p>Aproximadamente 29 kcal em 100 ml</p>
+            </div>
+            <div class="info-card advantage-card">
+                <i class="fas fa-seedling"></i>
+                <h3>Integral</h3>
+                <p>Feito de grãos inteiros de feijão</p>
+            </div>
+            <div class="info-card advantage-card">
+                <i class="fas fa-tint"></i>
+                <h3>Fonte de Ferro</h3>
+                <p>0,5 mg de Ferro em 100 ml</p>
+            </div>
+            <div class="info-card advantage-card">
+                <i class="fas fa-prohibited"></i>
+                <h3>Zero Gordura Trans</h3>
+                <p>Sem gordura trans e saturada</p>
+            </div>
+            <div class="info-card advantage-card">
+                <i class="fas fa-dumbbell"></i>
+                <h3>Proteínas</h3>
+                <p>De alta digestibilidade</p>
+            </div>
+            <div class="info-card advantage-card">
+                <i class="fas fa-wheat-awn"></i>
+                <h3>Sem Glúten</h3>
+                <p>Opção sem glúten disponível</p>
+            </div>
+            <div class="info-card advantage-card">
+                <i class="fas fa-shield-heart"></i>
+                <h3>Sem Conservantes</h3>
+                <p>Produto natural, sem aditivos</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Missão -->
+    <div class="info-section">
+        <h2 class="info-subtitle">Missão</h2>
+        <blockquote class="info-quote">
+            "Servir ao público uma opção de bebida <strong>expressa</strong> e <strong>saudável</strong>,
+            assegurando uma vida saudável e promovendo o bem-estar para todos, em todas as idades."
+        </blockquote>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="back-link">
+        <i class="fas fa-arrow-left"></i> Voltar ao início
+    </a>
+</div>
+{% endblock %}

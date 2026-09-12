@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Contato{% endblock %}
+
+{% block content %}
+<div class="page-content">
+    <h1 class="page-title">Contato</h1>
+
+    <!-- Cards com informações individuais -->
+    <div class="contatos-grid">
+        <div class="contato-card">
+            <h3 class="contato-nome">Evilásio Erthal</h3>
+            <div class="contato-info">
+                <a href="mailto:evilasio_erthal@yahoo.com.br" class="contato-link">
+                    <i class="fas fa-envelope"></i> evilasio_erthal@yahoo.com.br
+                </a>
+                <a href="tel:+5547988495627" class="contato-link">
+                    <i class="fas fa-phone"></i> +55 47 98849-5627
+                </a>
+            </div>
+        </div>
+
+        <div class="contato-card">
+            <h3 class="contato-nome">Carlos Alberto Ferreira</h3>
+            <div class="contato-info">
+                <a href="mailto:caf_fer@yahoo.com.br" class="contato-link">
+                    <i class="fas fa-envelope"></i> caf_fer@yahoo.com.br
+                </a>
+                <a href="tel:+5547991888056" class="contato-link">
+                    <i class="fas fa-phone"></i> +55 47 99188-8056
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="back-link">
+        <i class="fas fa-arrow-left"></i> Voltar ao início
+    </a>
+</div>
+{% endblock %}

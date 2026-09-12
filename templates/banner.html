@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Banner Explicativo{% endblock %}
+
+{% block content %}
+<div class="page-content">
+    <h1 class="page-title">Banner Explicativo</h1>
+    <div class="banner-container">
+        <img src="{{ url_for('static', filename='banner.png') }}" alt="Banner Explicativo Lord of Beans" class="banner-img">
+    </div>
+    <a href="{{ url_for('index') }}" class="back-link">
+        <i class="fas fa-arrow-left"></i> Voltar ao início
+    </a>
+</div>
+{% endblock %}

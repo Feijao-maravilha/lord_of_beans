@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Feijão Expresso{% endblock %} | Lord of Beans</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    {% block content %}{% endblock %}
+
+    <footer class="footer">
+        <p>&copy; 2026 Lord of Beans — Feijão Expresso. Todos os direitos reservados.</p>
+        <a href="https://instagram.com/feijaoexpresso" target="_blank" class="footer-instagram">
+            <i class="fab fa-instagram"></i> @feijaoexpresso
+        </a>
+    </footer>
+</body>
+</html>

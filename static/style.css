@@ -1,0 +1,596 @@
+/* ===== Paleta baseada no logo ===== */
+:root {
+    --verde-escuro: #0a1a0c;
+    --verde-medio: #1a2e1b;
+    --verde-musgo: #2e3d14;
+    --dourado: #e0a93c;
+    --dourado-claro: #d4b35f;
+    --dourado-escuro: #a88836;
+    --off-white: #f2f0e6;
+}
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--verde-escuro);
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--off-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
+    border-bottom: 2px solid var(--dourado-escuro);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-mini {
+    height: 50px;
+    width: auto;
+    border-radius: 6px;
+}
+
+.nav-instagram {
+    color: var(--dourado-claro);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.3s;
+}
+
+.nav-instagram:hover {
+    color: var(--dourado);
+}
+
+/* ===== Hero ===== */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.7rem 2rem 1.8rem;
+    text-align: center;
+}
+
+.hero-logo {
+    margin-bottom: 1.35rem;
+}
+
+.logo-main {
+    height: 243px;
+    width: auto;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
+    animation: fadeInDown 1s ease;
+}
+
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: 4.05rem;
+    font-weight: 900;
+    color: var(--dourado);
+    letter-spacing: 3px;
+    text-shadow:
+        2px 2px 0 var(--dourado-escuro),
+        4px 4px 8px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.44rem;
+    color: var(--off-white);
+    margin-top: 0.45rem;
+    letter-spacing: 2px;
+    opacity: 0.85;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+/* ===== Ícones / Navegação ===== */
+.icons-section {
+    padding: 2rem 2rem 3rem;
+    text-align: center;
+}
+
+.icons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    color: var(--off-white);
+    transition: transform 0.3s ease;
+    width: 140px;
+}
+
+.icon-card:hover {
+    transform: translateY(-8px);
+}
+
+.icon-circle {
+    width: 81px;
+    height: 81px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--verde-musgo), var(--verde-medio));
+    border: 3px solid var(--dourado-escuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--dourado);
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(224, 169, 60, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.icon-card:hover .icon-circle {
+    border-color: var(--dourado);
+    box-shadow:
+        0 6px 25px rgba(224, 169, 60, 0.3),
+        inset 0 2px 8px rgba(224, 169, 60, 0.15);
+}
+
+.icon-card span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.icon-card:hover span {
+    color: var(--dourado);
+}
+
+/* ===== Banner Instagram ===== */
+.instagram-banner {
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem auto 2rem;
+    max-width: 500px;
+}
+
+.instagram-banner a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, var(--verde-musgo), var(--verde-medio));
+    border: 2px solid var(--dourado-escuro);
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    color: var(--dourado);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.instagram-banner a:hover {
+    border-color: var(--dourado);
+    box-shadow: 0 4px 20px rgba(224, 169, 60, 0.3);
+    transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+.footer {
+    margin-top: auto;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    background: var(--verde-escuro);
+    border-top: 2px solid var(--dourado-escuro);
+    color: var(--off-white);
+    font-size: 0.85rem;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.footer-instagram {
+    color: var(--dourado);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* ===== Animações ===== */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Páginas internas ===== */
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+    text-align: center;
+}
+
+.page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    color: var(--dourado);
+    margin-bottom: 2.5rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.page-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--off-white);
+    opacity: 0.9;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .logo-main {
+        height: 180px;
+    }
+    .icons-grid {
+        gap: 1.5rem;
+    }
+    .icon-card {
+        width: 110px;
+    }
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== Página do Banner Explicativo ===== */
+.banner-container {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    max-width: 900px;
+}
+
+.banner-img {
+    max-width: 81%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--dourado);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid var(--dourado-escuro);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    border-color: var(--dourado);
+    box-shadow: 0 4px 15px rgba(224, 169, 60, 0.3);
+    transform: translateX(-5px);
+}
+
+/* ===== Página O que é ===== */
+.info-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.info-logo {
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.info-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: var(--dourado);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.info-subtitle::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--dourado-escuro);
+    margin: 0.5rem auto 0;
+}
+
+.info-section {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.info-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--off-white);
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.info-text strong {
+    color: var(--dourado-claro);
+}
+
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.info-card {
+    background: linear-gradient(135deg, var(--verde-musgo), var(--verde-medio));
+    border: 2px solid var(--dourado-escuro);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(224, 169, 60, 0.2);
+    border-color: var(--dourado);
+}
+
+.info-card i {
+    font-size: 2.2rem;
+    color: var(--dourado);
+    margin-bottom: 0.8rem;
+}
+
+.info-card h3 {
+    font-size: 1rem;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.info-card p {
+    font-size: 0.85rem;
+    color: var(--off-white);
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+.advantage-card {
+    background: linear-gradient(135deg, var(--verde-medio), var(--verde-escuro));
+}
+
+.info-quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--off-white);
+    border-left: 4px solid var(--dourado);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 600px;
+    text-align: left;
+    background: rgba(46, 61, 20, 0.3);
+    border-radius: 0 12px 12px 0;
+}
+
+.info-quote strong {
+    color: var(--dourado);
+}
+
+/* ===== Página Vídeos ===== */
+.videos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+}
+
+.video-item {
+    text-align: center;
+    width: 100%;
+    max-width: 360px;
+}
+
+.video-player {
+    width: 100%;
+    border: 3px solid var(--dourado-escuro);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+
+.video-label {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--dourado);
+    margin-top: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* ===== Página Fotos ===== */
+.fotos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+}
+
+.foto-item {
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+}
+
+.foto-img {
+    width: 100%;
+    height: 364px;
+    object-fit: contain;
+    border: 3px solid var(--dourado-escuro);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--verde-escuro);
+}
+
+.foto-item:hover .foto-img {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(224, 169, 60, 0.3);
+    border-color: var(--dourado);
+}
+
+.foto-label {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--dourado);
+    margin-top: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* ===== Página Contato ===== */
+.contatos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.contato-card {
+    background: linear-gradient(135deg, var(--verde-musgo), var(--verde-medio));
+    border: 2px solid var(--dourado-escuro);
+    border-radius: 16px;
+    padding: 2.5rem 1.5rem;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contato-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(224, 169, 60, 0.2);
+    border-color: var(--dourado);
+}
+
+.contato-nome {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--dourado);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contato-link {
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: color 0.3s;
+    word-break: break-all;
+}
+
+.contato-link:hover {
+    color: var(--dourado);
+}
+
+.contato-link i {
+    color: var(--dourado);
+    font-size: 1rem;
+}
+
+/* ===== Responsivo Geral ===== */
+@media (max-width: 768px) {
+    .contato-card {
+        max-width: 100%;
+    }
+    .video-item {
+        max-width: 100%;
+    }
+    .foto-item {
+        max-width: 100%;
+    }
+    .info-card {
+        width: 150px;
+        padding: 1rem 0.8rem;
+    }
+}

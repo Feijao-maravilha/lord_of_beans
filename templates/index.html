@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Início{% endblock %}
+
+{% block content %}
+<header class="hero">
+    <div class="hero-logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Lord of Beans" class="logo-main">
+    </div>
+    <div class="hero-text">
+        <h1 class="hero-title">Feijão Expresso</h1>
+        <p class="hero-subtitle">É bom! É bom!</p>
+    </div>
+</header>
+
+<section class="icons-section">
+    <div class="icons-grid">
+        <a href="{{ url_for('o_que_e') }}" class="icon-card">
+            <div class="icon-circle">
+                <i class="fas fa-question"></i>
+            </div>
+            <span>O QUE É?</span>
+        </a>
+        <a href="{{ url_for('banner') }}" class="icon-card">
+            <div class="icon-circle">
+                <i class="fas fa-flag"></i>
+            </div>
+            <span>BANNER EXPLICATIVO</span>
+        </a>
+        <a href="{{ url_for('videos') }}" class="icon-card">
+            <div class="icon-circle">
+                <i class="fas fa-play"></i>
+            </div>
+            <span>VÍDEOS</span>
+        </a>
+        <a href="{{ url_for('fotos') }}" class="icon-card">
+            <div class="icon-circle">
+                <i class="fas fa-camera"></i>
+            </div>
+            <span>FOTOS</span>
+        </a>
+        <a href="{{ url_for('contato') }}" class="icon-card">
+            <div class="icon-circle">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <span>CONTATO</span>
+        </a>
+    </div>
+</section>
+
+<section class="instagram-banner">
+    <a href="https://instagram.com/feijaoexpresso" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <span>Siga-nos: @feijaoexpresso</span>
+    </a>
+</section>
+{% endblock %}

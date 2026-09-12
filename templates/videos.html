@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Vídeos{% endblock %}
+
+{% block content %}
+<div class="page-content">
+    <h1 class="page-title">Vídeos</h1>
+
+    <div class="videos-grid">
+        <div class="video-item">
+            <video controls class="video-player">
+                <source src="{{ url_for('static', filename='video-01.mp4') }}" type="video/mp4">
+                Seu navegador não suporta vídeo.
+            </video>
+            <h3 class="video-label">Vídeo 1</h3>
+        </div>
+
+        <div class="video-item">
+            <video controls class="video-player">
+                <source src="{{ url_for('static', filename='video-02.mp4') }}" type="video/mp4">
+                Seu navegador não suporta vídeo.
+            </video>
+            <h3 class="video-label">Vídeo 2</h3>
+        </div>
+
+        <div class="video-item">
+            <video controls class="video-player">
+                <source src="{{ url_for('static', filename='video-03.mp4') }}" type="video/mp4">
+                Seu navegador não suporta vídeo.
+            </video>
+            <h3 class="video-label">Vídeo 3</h3>
+        </div>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="back-link">
+        <i class="fas fa-arrow-left"></i> Voltar ao início
+    </a>
+</div>
+{% endblock %}
