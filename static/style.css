@@ -8,3 +8,14 @@
 .photo-natural-v10 img{display:block!important;width:100%!important;height:auto!important;max-width:100%!important;max-height:none!important;min-height:0!important;object-fit:contain!important;object-position:center!important;aspect-ratio:auto!important;position:static!important;transform:none!important;}
 .photo-natural-v10 figcaption{padding:14px 18px 16px;color:#65706a;font-size:11px;letter-spacing:.4px;}
 @media(max-width:760px){.photo-gallery-v10{margin-top:38px;gap:24px}.photo-natural-v10 img{width:100%!important;height:auto!important;}}
+/* Menu de idiomas */
+.language-select select {
+    background: #0f2f24;
+    color: #f4efe4;
+    border: 1px solid rgba(244, 239, 228, 0.35);
+}
+
+.language-select select option {
+    background: #f4efe4;
+    color: #071d16;
+}
