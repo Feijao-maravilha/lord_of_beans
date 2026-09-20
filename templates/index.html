@@ -1,57 +1,35 @@
-{% extends "base.html" %}
-
-{% block title %}Início{% endblock %}
-
-{% block content %}
-<header class="hero">
-    <div class="hero-logo">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Lord of Beans" class="logo-main">
-    </div>
-    <div class="hero-text">
-        <h1 class="hero-title">Feijão Expresso</h1>
-        <p class="hero-subtitle">É bom! É bom!</p>
-    </div>
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lord of Beans — Feijão Expresso. FoodTech que conecta produto, máquina e rede de distribuição.">
+  <meta name="theme-color" content="#071d16"><title>Lord of Beans | Feijão Expresso</title>
+  <link rel="icon" href="{{ url_for('static', filename='media/logo.png') }}"><link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='11') }}">
+</head>
+<body>
+<div class="topline"><div>FOODTECH · FEIJÃO EXPRESSO</div><a href="https://www.instagram.com/feijaoexpresso/" target="_blank" rel="noopener">@feijaoexpresso ↗</a></div>
+<header class="site-header">
+  <a class="brand" href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='media/logo.png') }}" alt="Lord of Beans"><span>Lord of Beans</span></a>
+  <button class="menu-btn" type="button" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+  <nav class="main-nav">
+    <a href="#product">{{ t.nav_product }}</a><a href="#model">{{ t.nav_model }}</a><a href="#story">{{ t.nav_story }}</a><a href="#validation">{{ t.nav_validation }}</a><a href="#experience">{{ t.nav_experience }}</a><a href="#contact">{{ t.nav_contact }}</a>
+  </nav>
+  <div class="header-actions"><a class="instagram-link" href="https://www.instagram.com/feijaoexpresso/" target="_blank" rel="noopener">Instagram</a><label class="language-select"><span class="sr-only">{{ t.lang }}</span><select onchange="location.href='/'+this.value" aria-label="{{ t.lang }}"><option value="pt" {% if lang=='pt' %}selected{% endif %}>Português</option><option value="en" {% if lang=='en' %}selected{% endif %}>English</option><option value="es" {% if lang=='es' %}selected{% endif %}>Español</option><option value="de" {% if lang=='de' %}selected{% endif %}>Deutsch</option><option value="fr" {% if lang=='fr' %}selected{% endif %}>Français</option><option value="it" {% if lang=='it' %}selected{% endif %}>Italiano</option></select></label></div>
 </header>
-
-<section class="icons-section">
-    <div class="icons-grid">
-        <a href="{{ url_for('o_que_e') }}" class="icon-card">
-            <div class="icon-circle">
-                <i class="fas fa-question"></i>
-            </div>
-            <span>O QUE É?</span>
-        </a>
-        <a href="{{ url_for('banner') }}" class="icon-card">
-            <div class="icon-circle">
-                <i class="fas fa-flag"></i>
-            </div>
-            <span>BANNER EXPLICATIVO</span>
-        </a>
-        <a href="{{ url_for('videos') }}" class="icon-card">
-            <div class="icon-circle">
-                <i class="fas fa-play"></i>
-            </div>
-            <span>VÍDEOS</span>
-        </a>
-        <a href="{{ url_for('fotos') }}" class="icon-card">
-            <div class="icon-circle">
-                <i class="fas fa-camera"></i>
-            </div>
-            <span>FOTOS</span>
-        </a>
-        <a href="{{ url_for('contato') }}" class="icon-card">
-            <div class="icon-circle">
-                <i class="fas fa-envelope"></i>
-            </div>
-            <span>CONTATO</span>
-        </a>
-    </div>
-</section>
-
-<section class="instagram-banner">
-    <a href="https://instagram.com/feijaoexpresso" target="_blank">
-        <i class="fab fa-instagram"></i>
-        <span>Siga-nos: @feijaoexpresso</span>
-    </a>
-</section>
-{% endblock %}
+<main>
+<section class="hero"><div class="hero-copy"><div class="eyebrow">{{ t.hero_tag }}</div><h1>{{ t.hero_title_v7 }}</h1><p class="hero-lead">{{ t.hero_text_v7 }}</p><div class="hero-actions"><a class="button button-gold" href="#product">{{ t.hero_primary }}</a><a class="button button-outline" href="#story">{{ t.hero_secondary }}</a></div><div class="hero-proof"><span>2017</span><i></i><span>600+ {{ t.cups|replace('+600 ','') }}</span><i></i><span>27–28/08/2026</span></div></div><div class="hero-visual"><div class="hero-glow"></div><div class="hero-card"><img src="{{ url_for('static', filename='images/copo.png') }}" alt="Feijão Expresso"></div><div class="hero-note"><strong>THE POWER OF BEANS</strong><span>Produto · Máquina · Rede</span></div></div></section>
+<section id="product" class="section product-section"><div class="section-head split-head"><div><span class="eyebrow">{{ t.section_label }}</span><h2>{{ t.product_title }}</h2></div><p>{{ t.product_text }}</p></div><div class="feature-grid"><article><span class="feature-number">01</span><h3>{{ t.feature1 }}</h3><p>{{ t.feature1t }}</p></article><article><span class="feature-number">02</span><h3>{{ t.feature2 }}</h3><p>{{ t.feature2t }}</p></article><article><span class="feature-number">03</span><h3>{{ t.feature3 }}</h3><p>{{ t.feature3t }}</p></article></div></section>
+<section id="model" class="section model-section"><div class="section-head centered"><span class="eyebrow">{{ t.model_label }}</span><h2>{{ t.model_title }}</h2><p>{{ t.model_text }}</p></div><div class="model-grid"><article><span>01</span><h3>{{ t.model1 }}</h3><p>{{ t.model1t }}</p></article><article><span>02</span><h3>{{ t.model2 }}</h3><p>{{ t.model2t }}</p></article><article><span>03</span><h3>{{ t.model3 }}</h3><p>{{ t.model3t }}</p></article></div><div class="network"><div><span class="eyebrow">LORD OF BEANS NETWORK</span><h3>{{ t.network_title }}</h3><p>{{ t.network_text }}</p></div><div class="flow"><span>{{ t.network_a }}</span><b>→</b><span>{{ t.network_b }}</span><b>→</b><span>{{ t.network_c }}</span></div></div></section>
+<section class="scale-section"><div class="scale-inner"><div class="scale-copy"><span class="eyebrow">{{ t.scale_label }}</span><h2>{{ t.scale_title }}</h2><p>{{ t.scale_text }}</p></div><div class="scale-stats"><div><strong>{{ t.scale1 }}</strong><span>{{ t.scale1t }}</span></div><div><strong>{{ t.scale2 }}</strong><span>{{ t.scale2t }}</span></div><div><strong>{{ t.scale3 }}</strong><span>{{ t.scale3t }}</span></div></div></div></section>
+<section id="story" class="section story-section"><div class="section-head centered"><span class="eyebrow">{{ t.story_kicker }}</span><h2>{{ t.story_title }}</h2><p>{{ t.story_intro }}</p></div><div class="timeline"><article><div class="time">2017</div><div><h3>{{ t.origin_title }}</h3><p>{{ t.origin_text }}</p></div></article><article><div class="time">2020</div><div><h3>{{ t.patent_title }}</h3><p>{{ t.patent_text }}</p></div></article><article><div class="time">{{ t.guabiruba_year }}</div><div><h3>{{ t.guabiruba_title }}</h3><p>{{ t.guabiruba_text }}</p></div></article><article><div class="time">{{ t.feedback_year }}</div><div><h3>{{ t.feedback_title }}</h3><p>{{ t.feedback_text }}</p></div></article><article><div class="time">{{ t.sp_year }}</div><div><h3>{{ t.sp_title }}</h3><p>{{ t.sp_text }}</p></div></article><article class="current"><div class="time">{{ t.now_year }}</div><div><h3>{{ t.now_title }}</h3><p>{{ t.now_text }}</p></div></article></div></section>
+<section id="validation" class="validation-section"><div class="validation-inner"><div class="validation-copy"><span class="eyebrow">{{ t.validation_label }}</span><h2>{{ t.validation_title_v7 }}</h2><p>{{ t.validation_text_v7 }}</p><a class="text-link" href="#experience">{{ t.story_cta }} →</a></div><div class="validation-main"><div class="big-stat"><strong>+600</strong><span>{{ t.cups }}</span></div><div class="stat-row"><div><strong>190</strong><span>{{ t.sp }}</span></div><div><strong>30</strong><span>Google Forms<br>10 por experiência</span></div></div><div class="score"><strong>4,8/5</strong><span>{{ t.score_label }}</span><em>{{ t.recommend }} · {{ t.purchase }}</em></div></div></div><div class="validation-locations"><span>{{ t.loc1 }}</span><span>{{ t.loc2 }}</span><span>{{ t.loc3 }}</span></div></section>
+<section id="experience" class="section experience-section"><div class="section-head split-head"><div><span class="eyebrow">{{ t.media_kicker }}</span><h2>{{ t.media_title_v7 }}</h2></div><p>{{ t.media_text_v7 }}</p></div><div class="media-grid"><article class="video-card featured"><video controls preload="metadata"><source src="{{ url_for('static', filename='media/video-01.mp4') }}" type="video/mp4"></video><div><span>01</span><h3>{{ t.video1 }}</h3></div></article><article class="video-card"><video controls preload="metadata" poster="{{ url_for('static', filename='media/experiencia-sp-01.jpg') }}"><source src="{{ url_for('static', filename='media/video-02.mp4') }}" type="video/mp4"></video><div><span>02</span><h3>{{ t.video2 }}</h3></div></article><article class="video-card"><video controls preload="metadata" poster="{{ url_for('static', filename='media/experiencia-sp-02.jpg') }}"><source src="{{ url_for('static', filename='media/video-03.mp4') }}" type="video/mp4"></video><div><span>03</span><h3>{{ t.video3 }}</h3></div></article></div><div class="photo-gallery-v10">
+<figure class="photo-natural-v10"><img src="{{ url_for('static', filename='media/experiencia-sp-01.jpg') }}" alt="Feijão Expresso em evento"><figcaption>Encontro de Negócios — São Paulo</figcaption></figure>
+<figure class="photo-natural-v10"><img src="{{ url_for('static', filename='media/experiencia-sp-02.jpg') }}" alt="Feijão Expresso em apresentação"><figcaption>Apresentação e degustação</figcaption></figure>
+</div></section>
+<section class="portfolio-section"><div class="portfolio-inner"><div class="portfolio-intro"><span class="eyebrow">{{ t.portfolio_kicker }}</span><h2>{{ t.portfolio_title }}</h2><p>{{ t.portfolio_text }}</p></div><div class="portfolio-list"><article><span>01</span><div><h3>{{ t.original }}</h3><p>{{ t.original_text }}</p></div><b>CORE</b></article><article><span>02</span><div><h3>{{ t.vegan }}</h3><p>{{ t.vegan_text }}</p></div><b>IN DEVELOPMENT</b></article><article><span>03</span><div><h3>{{ t.spicy }}</h3><p>{{ t.spicy_text }}</p></div><b>IN DEVELOPMENT</b></article></div></div></section>
+<section id="contact" class="contact-section"><div class="contact-inner"><div class="contact-copy"><span class="eyebrow">{{ t.contact_label }}</span><h2>{{ t.contact_title_v7 }}</h2><p>{{ t.contact_text_v7 }}</p><a class="instagram-button" href="https://www.instagram.com/feijaoexpresso/" target="_blank" rel="noopener">{{ t.contact_instagram }} · @feijaoexpresso ↗</a></div><div class="people-grid"><article><div class="person-role">{{ t.founder_role }}</div><h3>Evilásio Erthal</h3><p>{{ t.founder_text }}</p><a href="mailto:evilasio_erthal@yahoo.com.br">evilasio_erthal@yahoo.com.br</a><a href="tel:+5547988495627">+55 47 98849-5627</a></article><article><div class="person-role">{{ t.commercial_role }}</div><h3>Carlos Alberto Ferreira</h3><p>{{ t.commercial_text }}</p><a href="mailto:caf_fer@yahoo.com.br">caf_fer@yahoo.com.br</a><a href="tel:+5547991888056">+55 47 99188-8056</a></article></div></div></section>
+</main>
+<footer><div class="footer-brand"><img src="{{ url_for('static', filename='media/logo.png') }}" alt="Lord of Beans"><span>Lord of Beans</span></div><p>{{ t.footer_v7 }}</p><a href="https://www.instagram.com/feijaoexpresso/" target="_blank" rel="noopener">@feijaoexpresso ↗</a></footer>
+<script>document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('menu-open')));</script>
+</body></html>

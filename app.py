@@ -1,30 +1,31 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, session
+import json, os
 
 app = Flask(__name__)
+app.secret_key = 'lord-of-beans-v7'
+LANGS = ['pt', 'en', 'es', 'de', 'fr', 'it']
+DEFAULT = 'pt'
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+with open(os.path.join('translations', 'translations.json'), encoding='utf-8') as f:
+    T = json.load(f)
 
-@app.route("/o-que-e")
-def o_que_e():
-    return render_template("o_que_e.html")
+@app.route('/')
+def home():
+    lang = session.get('lang', DEFAULT)
+    return render_template('index.html', t=T[lang], lang=lang, langs=LANGS)
 
-@app.route("/banner")
-def banner():
-    return render_template("banner.html")
+@app.route('/<lang>')
+def localized(lang):
+    if lang not in LANGS:
+        return redirect(url_for('home'))
+    session['lang'] = lang
+    return render_template('index.html', t=T[lang], lang=lang, langs=LANGS)
 
-@app.route("/videos")
-def videos():
-    return render_template("videos.html")
-
-@app.route("/fotos")
-def fotos():
-    return render_template("fotos.html")
-
-@app.route("/contato")
-def contato():
-    return render_template("contato.html")
+@app.route('/set-language/<lang>')
+def set_language(lang):
+    if lang in LANGS:
+        session['lang'] = lang
+    return redirect(request.referrer or url_for('home'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True, host='127.0.0.1', port=5000)
