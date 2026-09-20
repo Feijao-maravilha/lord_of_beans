@@ -1,4 +1,4 @@
-# Lord of Beans — Feijão Expresso — V10
+# Lord of Beans — Feijão Expresso — V11
 
 V10 is based on V9. The experience photo gallery was rebuilt as a single-column natural-size gallery. Each image uses its own intrinsic aspect ratio with width:100%, height:auto and object-fit:contain. No fixed image height, max-height, clipping or crop is applied to the gallery images.
 
